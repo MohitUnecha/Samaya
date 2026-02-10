@@ -1,0 +1,2 @@
+DEPLOYMENT_DATE=2026-02-10
+DEPLOYMENT_TRIGGER=Fresh Vercel redeploy after git submodule fix
