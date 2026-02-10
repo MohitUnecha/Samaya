@@ -1,7 +1,7 @@
 # Samaya Global - Nonprofit Website
 
-SAMAYAGLOBAL.ORG
-
+[SAMAYAGLOBAL.ORG
+](SAMAYAGLOBAL.ORG)
 A professional, modern nonprofit website for Samaya Global, built with cutting-edge technologies and responsive design principles.
 
 ## Overview
