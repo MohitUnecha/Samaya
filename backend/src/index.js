@@ -18,6 +18,8 @@ app.use(
     origin: [
       'http://localhost:3000',
       'https://mohitunecha.github.io',
+      'https://samayaglobal.org',
+      'https://www.samayaglobal.org',
       'https://samaya-indol.vercel.app',
     ],
     credentials: true,
