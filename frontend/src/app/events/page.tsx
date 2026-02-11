@@ -15,16 +15,16 @@ const navigation = [
 ];
 
 const eventPhotos = [
-  '/images/eventphotos/KKPhotographyNJ-00991.jpg',
-  '/images/eventphotos/KKPhotographyNJ-01031.jpg',
-  '/images/eventphotos/KKPhotographyNJ-01044.jpg',
-  '/images/eventphotos/KKPhotographyNJ-01292.jpg',
-  '/images/eventphotos/KKPhotographyNJ-7407962.jpg',
-  '/images/eventphotos/KKPhotographyNJ-7407975.jpg',
-  '/images/eventphotos/KKPhotographyNJ-7407980.jpg',
-  '/images/eventphotos/KKPhotographyNJ-7407985.jpg',
-  '/images/eventphotos/KKPhotographyNJ-7408046.jpg',
-  '/images/eventphotos/dandiya_2024_3.jpg',
+  '/Samaya/images/eventphotos/KKPhotographyNJ-00991.jpg',
+  '/Samaya/images/eventphotos/KKPhotographyNJ-01031.jpg',
+  '/Samaya/images/eventphotos/KKPhotographyNJ-01044.jpg',
+  '/Samaya/images/eventphotos/KKPhotographyNJ-01292.jpg',
+  '/Samaya/images/eventphotos/KKPhotographyNJ-7407962.jpg',
+  '/Samaya/images/eventphotos/KKPhotographyNJ-7407975.jpg',
+  '/Samaya/images/eventphotos/KKPhotographyNJ-7407980.jpg',
+  '/Samaya/images/eventphotos/KKPhotographyNJ-7407985.jpg',
+  '/Samaya/images/eventphotos/KKPhotographyNJ-7408046.jpg',
+  '/Samaya/images/eventphotos/dandiya_2024_3.jpg',
 ];
 
 const upcomingEvents = [
@@ -33,7 +33,7 @@ const upcomingEvents = [
     date: "Friday, February 27 | 7:00 PM",
     location: "Royal Albert Palace, Woodbridge, NJ",
     price: "$60",
-    image: "/images/events/Galentines Ki Filmy Shaam – Where Bollywood, Sisterhood & Dance Take Over 💃✨.jpg",
+    image: "/Samaya/images/events/Galentines Ki Filmy Shaam – Where Bollywood, Sisterhood & Dance Take Over 💃✨.jpg",
     highlights: [
       "Special Live Performance – Jayshree Srikanth, Founder & Artistic Director",
       "The DX Team – Fun, easy-to-follow Bollywood dance steps",
@@ -50,7 +50,7 @@ const previousEvents = [
     title: "Bollywood Garba Night – Where Beats, Tradition & Dance Take Over",
     date: "Sep 19, 2025",
     location: "Somerset, NJ",
-    image: "/images/events/Bollywood Garba Night – Where Beats, Tradition & Dance Take Over 💃✨.png",
+    image: "/Samaya/images/events/Bollywood Garba Night – Where Beats, Tradition & Dance Take Over 💃✨.png",
     highlights: [
       "Live Garba Energy – Celebrate tradition with vibrant Garba & Dandiya",
       "Bollywood Beats All Night – DJ Raj Kurani",
@@ -63,7 +63,7 @@ const previousEvents = [
     title: "Desi Dhamal Galentine's Party",
     date: "Mar 7, 2025",
     location: "Fords, NJ",
-    image: "/images/events/desi123.png",
+    image: "/Samaya/images/events/desi123.png",
     highlights: [
       "Dance the Night Away – DJ Raj Kurani",
       "Unlimited Food",
@@ -76,7 +76,7 @@ const previousEvents = [
     title: "Bollywood Fusion Dandiya",
     date: "Oct 4, 2024",
     location: "Edison, NJ",
-    image: "/images/events/Bollywood Fusion Dandiya: The Most Awaited Dandiya Night in New Jersey! 🎉💃 .png",
+    image: "/Samaya/images/events/Bollywood Fusion Dandiya: The Most Awaited Dandiya Night in New Jersey! 🎉💃 .png",
     highlights: [
       "360 Photo Booth",
       "Live Dhol",
@@ -89,7 +89,7 @@ const previousEvents = [
     title: "Sunrise Beach Yoga",
     date: "Aug 25, 2024",
     location: "Beach",
-    image: "/images/events/111222.png",
+    image: "/Samaya/images/events/111222.png",
     highlights: [
       "Serene and revitalizing session",
       "6 AM start time",
@@ -101,7 +101,7 @@ const previousEvents = [
     title: "🎉 Double the Magic, Double the Fun – Bollywood Tollywood Extravaganza! 🎶💃",
     date: "Apr 19, 2024",
     location: "TBD",
-    image: "/images/events/4444.png",
+    image: "/Samaya/images/events/4444.png",
     highlights: [
       "Bollywood & Tollywood DJs – Non-stop beats!",
       "Live Drums & Dance Motivators – Feel the rhythm!",
@@ -114,7 +114,7 @@ const previousEvents = [
     title: "Ladies Bollywood Masti Night 💃",
     date: "Jan 19, 2024",
     location: "Grand Ballroom",
-    image: "/images/events/222.png",
+    image: "/Samaya/images/events/222.png",
     highlights: [
       "Live Filming Opportunity – Be part of movie DASH!",
       "Walk the Red Carpet & Get Clicked by Paparazzi",
@@ -145,7 +145,7 @@ export default function Events() {
             <Link href="/" className="flex items-center space-x-2">
               <div className="relative w-10 h-10">
                 <Image
-                  src="/images/logo/samaya logo.png"
+                  src="/Samaya/images/logo/samaya logo.png"
                   alt="Samaya Logo"
                   fill
                   className="rounded-lg object-cover"

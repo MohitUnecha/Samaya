@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
             <Link href="/" className="flex items-center space-x-3 group">
               <div className="relative w-10 h-10 overflow-hidden rounded-lg">
                 <Image
-                  src="/images/logo/samaya logo.png"
+                  src="/Samaya/images/logo/samaya logo.png"
                   alt="Samaya"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"

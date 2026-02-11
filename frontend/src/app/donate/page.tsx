@@ -92,7 +92,7 @@ export default function Donate() {
             <Link href="/" className="flex items-center space-x-3 group">
               <div className="relative w-10 h-10 overflow-hidden rounded-lg">
                 <Image
-                  src="/images/logo/samaya logo.png"
+                  src="/Samaya/images/logo/samaya logo.png"
                   alt="Samaya"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
@@ -406,7 +406,7 @@ export default function Donate() {
               </div>
               <div className="relative w-full aspect-square mb-6 rounded-lg overflow-hidden bg-white p-2">
                 <Image
-                  src="/images/Donate/zelle.png"
+                  src="/Samaya/images/Donate/zelle.png"
                   alt="Zelle QR Code"
                   fill
                   className="object-contain"
@@ -441,7 +441,7 @@ export default function Donate() {
               </div>
               <div className="relative w-full aspect-square mb-6 rounded-lg overflow-hidden bg-white p-2">
                 <Image
-                  src="/images/Donate/venmo.jpg"
+                  src="/Samaya/images/Donate/venmo.jpg"
                   alt="Venmo QR Code"
                   fill
                   className="object-contain"

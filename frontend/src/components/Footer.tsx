@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <div className="flex items-center space-x-2 mb-4">
               <Image
-                src="/images/logo/samaya logo.png"
+                src="/Samaya/images/logo/samaya logo.png"
                 alt="Samaya Logo"
                 width={32}
                 height={32}

@@ -108,7 +108,7 @@ export default function Chat() {
           <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-2 group">
               <Image
-                src="/images/logo/samaya logo.png"
+                src="/Samaya/images/logo/samaya logo.png"
                 alt="Samaya Logo"
                 width={40}
                 height={40}
