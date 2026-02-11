@@ -4,20 +4,25 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
       
       - name: Install dependencies
         working-directory: frontend
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit
       
       - name: Build frontend
         working-directory: frontend
@@ -25,9 +30,12 @@ jobs:
           NEXT_PUBLIC_API_BASE_URL: https://samaya-indol.vercel.app
         run: npm run build
       
+      - name: Add .nojekyll file
+        run: touch ./frontend/out/.nojekyll
+      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/out
-          cname: ''
+          force_orphan: true
