@@ -19,19 +19,19 @@ const teamMembers = [
     name: 'Samiksha Sharma',
     role: 'Founder',
     description: 'Visionary leader dedicated to supporting women experiencing loneliness and isolation by creating empowering, compassionate communities.',
-    image: '/Samaya/images/team/SamikshaFounder.jpg',
+    image: '/images/team/SamikshaFounder.jpg',
   },
   {
     name: 'Siddhi Dubey',
     role: 'Co-Founder',
     description: 'Co-founder passionate about providing mental health resources and building safe spaces where women can heal and reach their full potential.',
-    image: '/Samaya/images/team/SiddhiCoFounder.jpg',
+    image: '/images/team/SiddhiCoFounder.jpg',
   },
   {
     name: 'Mohit Unecha',
     role: 'Technology Strategist',
     description: 'Leading technology initiatives to amplify our mission of supporting women and children through education, care, and community empowerment.',
-    image: '/Samaya/images/team/MohitUnechaTechnology Strategist.jpg',
+    image: '/images/team/MohitUnechaTechnology Strategist.jpg',
   },
 ];
 
@@ -53,7 +53,7 @@ export default function Team() {
             <Link href="/" className="flex items-center space-x-2">
               <div className="relative w-10 h-10">
                 <Image
-                  src="/Samaya/images/logo/samaya logo.png"
+                  src="/images/logo/samaya logo.png"
                   alt="Samaya Logo"
                   fill
                   className="rounded-lg object-cover"

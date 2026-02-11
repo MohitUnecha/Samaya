@@ -15,27 +15,27 @@ const navigation = [
 ];
 
 const eventPhotos = [
-  '/Samaya/images/events/photo of event 1.jpg',
-  '/Samaya/images/events/poe2.png',
-  '/Samaya/images/events/poe3.png',
-  '/Samaya/images/events/poe4.png',
+  '/images/events/photo of event 1.jpg',
+  '/images/events/poe2.png',
+  '/images/events/poe3.png',
+  '/images/events/poe4.png',
 ];
 
 const stockYogaPhotos = [
-  '/Samaya/images/stockyoga/yoga-1.png',
-  '/Samaya/images/stockyoga/yoga-2.png',
-  '/Samaya/images/stockyoga/yoga-3.png',
-  '/Samaya/images/stockyoga/yoga-4.png',
-  '/Samaya/images/stockyoga/yoga-5.png',
-  '/Samaya/images/stockyoga/yoga-6.png',
-  '/Samaya/images/stockyoga/yoga-7.png',
-  '/Samaya/images/stockyoga/yoga-8.png',
-  '/Samaya/images/stockyoga/yoga-9.png',
-  '/Samaya/images/stockyoga/yoga-10.png',
-  '/Samaya/images/stockyoga/yoga-11.png',
-  '/Samaya/images/stockyoga/yoga-12.png',
-  '/Samaya/images/stockyoga/yoga-13.png',
-  '/Samaya/images/stockyoga/yoga-14.png',
+  '/images/stockyoga/yoga-1.png',
+  '/images/stockyoga/yoga-2.png',
+  '/images/stockyoga/yoga-3.png',
+  '/images/stockyoga/yoga-4.png',
+  '/images/stockyoga/yoga-5.png',
+  '/images/stockyoga/yoga-6.png',
+  '/images/stockyoga/yoga-7.png',
+  '/images/stockyoga/yoga-8.png',
+  '/images/stockyoga/yoga-9.png',
+  '/images/stockyoga/yoga-10.png',
+  '/images/stockyoga/yoga-11.png',
+  '/images/stockyoga/yoga-12.png',
+  '/images/stockyoga/yoga-13.png',
+  '/images/stockyoga/yoga-14.png',
 ];
 
 export default function Home() {
@@ -114,7 +114,7 @@ export default function Home() {
             <Link href="/" className="flex items-center space-x-3 group">
               <div className="relative w-10 h-10 overflow-hidden rounded-lg">
                 <Image
-                  src="/Samaya/images/logo/samaya logo.png"
+                  src="/images/logo/samaya logo.png"
                   alt="Samaya"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
@@ -171,7 +171,7 @@ export default function Home() {
             {/* Blurred Background Image */}
             <div className="absolute inset-0">
               <Image
-                src="/Samaya/images/logo/logomain.jpg"
+                src="/images/logo/logomain.jpg"
                 alt="Background"
                 fill
                 className="object-cover blur-md"
@@ -188,7 +188,7 @@ export default function Home() {
           >
             <div className="mb-12">
               <Image
-                src="/Samaya/images/logo/samaya logo.png"
+                src="/images/logo/samaya logo.png"
                 alt="Samaya"
                 width={180}
                 height={180}
@@ -239,7 +239,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/Samaya/images/logo/logomain.jpg"
+                  src="/images/logo/logomain.jpg"
                   alt="Samaya Mission"
                   fill
                   className="object-cover"

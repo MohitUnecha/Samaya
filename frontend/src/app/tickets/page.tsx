@@ -20,7 +20,7 @@ const upcomingEvents = [
     date: "Friday, February 27 | 7:00 PM",
     location: "Royal Albert Palace, Woodbridge, NJ",
     price: "$60",
-    image: "/Samaya/images/events/Galentines Ki Filmy Shaam – Where Bollywood, Sisterhood & Dance Take Over 💃✨.jpg",
+    image: "/images/events/Galentines Ki Filmy Shaam – Where Bollywood, Sisterhood & Dance Take Over 💃✨.jpg",
     highlights: [
       "Special Live Performance – Jayshree Srikanth, Founder & Artistic Director",
       "The DX Team – Fun, easy-to-follow Bollywood dance steps",
@@ -84,7 +84,7 @@ export default function Tickets() {
             <Link href="/" className="flex items-center space-x-3 group">
               <div className="relative w-10 h-10 overflow-hidden rounded-lg">
                 <Image
-                  src="/Samaya/images/logo/samaya logo.png"
+                  src="/images/logo/samaya logo.png"
                   alt="Samaya"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
@@ -410,7 +410,7 @@ export default function Tickets() {
               </div>
               <div className="relative w-full aspect-square mb-6 rounded-lg overflow-hidden bg-white p-2">
                 <Image
-                  src="/Samaya/images/Donate/venmo.jpg"
+                  src="/images/Donate/venmo.jpg"
                   alt="Venmo QR Code"
                   fill
                   className="object-contain"
@@ -442,7 +442,7 @@ export default function Tickets() {
               </div>
               <div className="relative w-full aspect-square mb-6 rounded-lg overflow-hidden bg-white p-2">
                 <Image
-                  src="/Samaya/images/Donate/zelle.png"
+                  src="/images/Donate/zelle.png"
                   alt="Zelle QR Code"
                   fill
                   className="object-contain"
