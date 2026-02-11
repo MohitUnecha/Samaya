@@ -60,9 +60,15 @@ export default function Chat() {
     setLoading(true);
 
     try {
+      // Send conversation history for context (last 10 messages, excluding the initial greeting)
+      const chatHistory = messages
+        .filter((m) => m.id !== '1')
+        .slice(-10)
+        .map((m) => ({ role: m.role, content: m.content }));
+
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/chat`,
-        { message: inputValue }
+        { message: inputValue, history: chatHistory }
       );
 
       const aiMessage: Message = {

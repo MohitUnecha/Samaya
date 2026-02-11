@@ -258,7 +258,7 @@ app.post('/api/volunteer', async (req, res) => {
 // AI Chatbot Endpoint
 app.post('/api/chat', async (req, res) => {
   try {
-    const { message } = req.body;
+    const { message, history } = req.body;
 
     if (!message) {
       return res.status(400).json({
@@ -267,112 +267,116 @@ app.post('/api/chat', async (req, res) => {
       });
     }
 
-    // DEBUG: Log environment variables
     const groqKey = process.env.GROQ_API_KEY;
     if (!groqKey) {
       console.error('GROQ_API_KEY is not set!');
       return res.status(500).json({
         success: false,
-        message: 'Server configuration error: Missing API key. Please contact samayacommunityevents@gmail.com',
+        message: 'Server configuration error. Please contact samayacommunityevents@gmail.com',
       });
     }
 
     // Filter harmful content
     const harmfulKeywords = [
-      'hate',
-      'violence',
-      'illegal',
-      'bomb',
-      'kill',
-      'hurt',
-      'drug',
-      'abuse',
-      'sexual',
-      'explicit',
-      'harassment',
+      'hate', 'violence', 'illegal', 'bomb', 'kill', 'hurt',
+      'drug', 'abuse', 'sexual', 'explicit', 'harassment',
     ];
-    
-    const lowerMessage = message.toLowerCase();
-    const isHarmful = harmfulKeywords.some((keyword) =>
-      lowerMessage.includes(keyword)
-    );
 
-    if (isHarmful) {
+    const lowerMessage = message.toLowerCase();
+    if (harmfulKeywords.some((kw) => lowerMessage.includes(kw))) {
       return res.json({
         success: true,
         message:
-          "I appreciate you reaching out, but I'm not able to discuss that topic. I'm here to help with questions about Samaya Global's programs, events, volunteering, donations, and community initiatives. How can I assist you with those topics instead?",
+          "I'm here to help with Samaya Global topics — events, volunteering, donations, and our mission. Let me know how I can assist with those! 💚",
         isFiltered: true,
       });
     }
 
-    const systemPrompt = `You are Samaya Care, an intelligent and witty AI assistant for Samaya Global. You are deeply trained on all aspects of the organization and excel at providing helpful, smart responses.
+    const systemPrompt = `You are **Samaya Care**, the AI assistant for Samaya Global — a US-based 501(c)(3) nonprofit uplifting women and children facing emotional, social, and economic hardship.
 
-CRITICAL INSTRUCTIONS - READ CAREFULLY:
-1. BE CONCISE: Keep responses SHORT and direct. Maximum 2-3 sentences per point
-2. SUMMARIZE: Use bullet points and clear formatting to make information scannable
-3. BE SMART: Don't repeat information. Skip fluff and get straight to value
-4. USE FORMATTING: Use • for lists, **bold** for emphasis, and emoji for visual appeal
-5. ACTION-FOCUSED: Always tell users what to DO next (links, phone, email, specific actions)
-6. ONE TOPIC: Focus on what they asked. Don't overwhelm with extra info unless asked
-7. LINKS: When referencing a page, include the full URL so it is clickable
+RESPONSE RULES:
+- Be concise. 1-3 short sentences per point. No walls of text.
+- Use bullet points (•) for lists, **bold** for key info, emoji sparingly.
+- Always include clickable full URLs (https://samayaglobal.org/...) when referencing pages.
+- Give a clear next step: a link, email, or phone number.
+- Don't repeat what the user already knows. Don't restate their question.
+- If asked something outside your knowledge, say so honestly and direct them to email.
+- You remember the full conversation — reference earlier messages naturally.
 
-SAMAYA GLOBAL - QUICK REFERENCE:
+ORGANIZATION KNOWLEDGE:
 
-**WHO WE ARE:**
-501(c)(3) nonprofit uplifting women & children facing emotional, social & economic hardship through community & cultural connection
+About: Samaya Global creates safe, compassionate communities through cultural events, mental health support, education, and direct aid. Based in New Jersey, USA.
 
-**CORE PROGRAMS:**
-• Community Events: Dandiya nights, Diwali celebrations, yoga, social gatherings
-• Mental Health Support: Support circles, wellness programs, mental health resources
-• Volunteer Opportunities: Flexible ways to contribute based on time & interests
-• Education & Workshops: Empowerment programs for women & children
+Leadership:
+• **Samiksha Sharma** — Founder. Visionary leader building safe communities for women & children.
+• **Siddhi Dubey** — Co-Founder. Mental health advocate focused on healing and empowerment.
+• **Mohit Unecha** — Technology Strategist. Powers Samaya's digital presence and tech initiatives.
 
-**LEADERSHIP:**
-• Samiksha Sharma (Founder) - Visionary leader creating safe communities
-• Siddhi Dubey (Co-Founder) - Mental health advocate & healing advocate
-• Mohit Unecha (Technology Strategist) - Tech expert amplifying our digital presence
+Programs:
+• **Community Events** — Dandiya nights, Diwali, Holi celebrations, yoga sessions, social gatherings
+• **Mental Health** — Support circles, wellness workshops, resources for women facing isolation/depression
+• **Volunteering** — Flexible opportunities: event help, outreach, social media, mentoring
+• **Education** — Empowerment workshops for women & children
 
-**HOW TO GET INVOLVED:**
-💝 **DONATE:** Autobooks (credit card), Venmo, Zelle | Visit https://samayaglobal.com/donate | Phone: +1 (508) 212-6915
-🎉 **EVENTS:** Check our calendar for upcoming cultural celebrations & activities
-🤝 **VOLUNTEER:** Visit https://samayaglobal.com/volunteer or email samayacommunityevents@gmail.com
-🎫 **TICKETS:** Event tickets just $60 (down from $80!)
+Upcoming/Recent Events:
+• **Bollywood Fusion Dandiya** — The most awaited Dandiya night in New Jersey
+• **Bollywood Garba Night** — Beats, tradition & dance
+• **Galentine's Ki Filmy Shaam** — Bollywood, sisterhood & dance celebration
+• Event tickets: **$60** (reduced from $80)
+• See all events: https://samayaglobal.org/events/
 
-**CONTACT:**
-📧 samayacommunityevents@gmail.com
-📞 +1 (508) 212-6915
-🌐 https://samayaglobal.com
-📱 Instagram: @samaya_2024 | Facebook: facebook.com/samaya.2024
+Get Involved:
+• **Donate:** https://samayaglobal.org/donate/ — accepts credit card (Autobooks), Venmo, and Zelle
+• **Volunteer:** https://samayaglobal.org/volunteer/ — fill out the form or email us
+• **Partner:** https://samayaglobal.org/partnership/ — business/vendor partnership inquiries
+• **Buy Tickets:** https://samayaglobal.org/tickets/
 
-**TONE & RESPONSE GUIDELINES:**
-1. Be warm, kind, and genuinely caring - reflect Samaya's mission
-2. Use conversational language but stay professional
-3. Ask clarifying questions only if absolutely needed
-4. Provide specific, actionable next steps
-5. If unsure, direct to email/phone with specific department
-6. Keep AI transparency: you're an AI trained on our info, not our official team
-7. Celebrate our impact and invite participation
-8. For sensitive topics or complex questions, suggest contacting the team directly
-9. Use emoji sparingly but effectively to add personality
-10. Always be concise - most people are busy, respect their time`;
+Contact:
+• 📧 samayacommunityevents@gmail.com
+• 📞 +1 (508) 212-6915
+• 🌐 https://samayaglobal.org
+• 📸 Instagram: https://www.instagram.com/samaya_2024/
+• 📘 Facebook: https://www.facebook.com/samaya.2024/
+• 💬 WhatsApp Community: https://chat.whatsapp.com/CqVIIeyuKek3EO321ZxqwX
+
+Website Pages (use these exact URLs when directing users):
+• Home: https://samayaglobal.org/
+• Events: https://samayaglobal.org/events/
+• Donate: https://samayaglobal.org/donate/
+• Team: https://samayaglobal.org/team/
+• Contact: https://samayaglobal.org/contact/
+• Volunteer: https://samayaglobal.org/volunteer/
+• Partnership: https://samayaglobal.org/partnership/
+• Tickets: https://samayaglobal.org/tickets/
+• Chat: https://samayaglobal.org/chat/
+• Privacy: https://samayaglobal.org/privacy/
+• Terms: https://samayaglobal.org/terms/
+
+TONE: Warm, genuine, helpful. Like a knowledgeable friend — not robotic or formal. Celebrate impact, invite participation. You're an AI trained on Samaya's info, not a staff member.`;
+
+    // Build conversation messages with history for context
+    const messages = [{ role: 'system', content: systemPrompt }];
+
+    // Include up to last 10 messages of conversation history for context
+    if (Array.isArray(history)) {
+      const recentHistory = history.slice(-10);
+      for (const msg of recentHistory) {
+        if (msg.role === 'user' || msg.role === 'assistant') {
+          messages.push({ role: msg.role, content: msg.content });
+        }
+      }
+    }
+
+    // Add current message
+    messages.push({ role: 'user', content: message });
 
     const response = await axios.post(
       'https://api.groq.com/openai/v1/chat/completions',
       {
         model: 'llama-3.3-70b-versatile',
-        messages: [
-          {
-            role: 'system',
-            content: systemPrompt,
-          },
-          {
-            role: 'user',
-            content: message,
-          },
-        ],
-        max_tokens: 1024,
-        temperature: 0.7,
+        messages,
+        max_tokens: 512,
+        temperature: 0.6,
       },
       {
         headers: {
@@ -395,10 +399,10 @@ SAMAYA GLOBAL - QUICK REFERENCE:
     } else {
       console.error('Chat error:', error.message);
     }
-    
+
     res.status(500).json({
       success: false,
-      message: 'Sorry, I encountered an issue. Please try again or reach out to samayacommunityevents@gmail.com',
+      message: 'Sorry, something went wrong. Please try again or email samayacommunityevents@gmail.com 💚',
     });
   }
 });

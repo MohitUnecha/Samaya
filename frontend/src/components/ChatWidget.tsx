@@ -57,9 +57,14 @@ export default function ChatWidget() {
     setLoading(true);
 
     try {
+      const chatHistory = messages
+        .filter((m) => m.id !== '1')
+        .slice(-10)
+        .map((m) => ({ role: m.role, content: m.content }));
+
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/chat`,
-        { message: messageToSend }
+        { message: messageToSend, history: chatHistory }
       );
 
       const aiMessage: Message = {
@@ -364,9 +369,14 @@ export default function ChatWidget() {
   async function handleSendMessageInternal(messageToSend: string) {
     setLoading(true);
     try {
+      const chatHistory = messages
+        .filter((m) => m.id !== '1')
+        .slice(-10)
+        .map((m) => ({ role: m.role, content: m.content }));
+
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/chat`,
-        { message: messageToSend }
+        { message: messageToSend, history: chatHistory }
       );
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
