@@ -265,6 +265,16 @@ app.post('/api/chat', async (req, res) => {
       });
     }
 
+    // DEBUG: Log environment variables
+    const groqKey = process.env.GROQ_API_KEY;
+    if (!groqKey) {
+      console.error('GROQ_API_KEY is not set!');
+      return res.status(500).json({
+        success: false,
+        message: 'Server configuration error: Missing API key. Please contact samayacommunityevents@gmail.com',
+      });
+    }
+
     // Filter harmful content
     const harmfulKeywords = [
       'hate',
@@ -364,7 +374,7 @@ SAMAYA GLOBAL - QUICK REFERENCE:
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+          Authorization: `Bearer ${groqKey}`,
           'Content-Type': 'application/json',
         },
       }
