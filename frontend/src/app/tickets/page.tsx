@@ -238,38 +238,17 @@ export default function Tickets() {
                     
                     {/* Content */}
                     <div className="relative z-10">
-                      {/* Savings Badge */}
-                      <div className="mb-8 inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg">
-                        💰 SAVE 25% - ONLY TODAY
-                      </div>
-
-                      <h2 className="text-2xl font-bold text-white mb-8">Limited Time Offer!</h2>
+                      <h2 className="text-2xl font-bold text-white mb-8">Event Tickets Available</h2>
                       
                       {/* Price Display */}
-                      <div className="mb-10 space-y-4">
-                        <div className="flex items-center gap-6">
-                          <div className="text-slate-500 line-through text-2xl font-bold">
-                            $80
-                          </div>
-                          <div className="bg-red-500/30 border-2 border-red-500/60 px-4 py-2 rounded-lg">
-                            <span className="text-red-300 font-bold text-sm">Original Price</span>
-                          </div>
-                        </div>
-                        
+                      <div className="mb-10">
                         <div className="bg-gradient-to-r from-emerald-950/40 to-teal-950/40 border-2 border-emerald-500/60 p-8 rounded-2xl">
-                          <p className="text-slate-300 text-base mb-3 font-semibold">Your Price Today</p>
+                          <p className="text-slate-300 text-base mb-3 font-semibold">Ticket Price</p>
                           <div className="text-5xl font-black bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 text-transparent bg-clip-text mb-2">
                             $60
                           </div>
                           <p className="text-slate-300 text-base">Per person</p>
                         </div>
-                      </div>
-
-                      {/* You Save Highlight */}
-                      <div className="bg-gradient-to-r from-red-500/20 to-amber-500/20 border-2 border-red-500/60 p-6 rounded-2xl mb-10 shadow-lg shadow-red-500/20">
-                        <p className="text-center text-lg font-bold text-transparent bg-gradient-to-r from-red-300 to-amber-300 bg-clip-text">
-                          ✨ YOU SAVE $20 PER TICKET ✨
-                        </p>
                       </div>
 
                       <p className="text-slate-300 text-lg mb-8 pb-8 border-b border-amber-500/50">
