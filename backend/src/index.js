@@ -15,7 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 // CORS Configuration
 app.use(
   cors({
-    origin: process.env.FRONTEND_ORIGIN || 'http://localhost:3000',
+    origin: [
+      'http://localhost:3000',
+      'https://mohitunecha.github.io',
+      'https://samaya-indol.vercel.app',
+    ],
     credentials: true,
   })
 );
