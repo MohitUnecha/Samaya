@@ -3,6 +3,7 @@ const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const nodemailer = require('nodemailer');
 const axios = require('axios');
+const { track } = require('@vercel/analytics/server');
 require('dotenv').config();
 
 const app = express();
@@ -103,6 +104,11 @@ app.post('/api/contact', async (req, res) => {
     await transporter.sendMail(adminMailOptions);
     await transporter.sendMail(userMailOptions);
 
+    // Track analytics event
+    await track('Contact Form Submitted', {
+      subject: subject,
+    });
+
     res.json({
       success: true,
       message: 'Your message has been sent successfully!',
@@ -171,6 +177,11 @@ app.post('/api/partnership', async (req, res) => {
     // Send both emails
     await transporter.sendMail(adminMailOptions);
     await transporter.sendMail(vendorMailOptions);
+
+    // Track analytics event
+    await track('Partnership Inquiry Submitted', {
+      businessType: businessType,
+    });
 
     res.json({
       success: true,
@@ -241,6 +252,12 @@ app.post('/api/volunteer', async (req, res) => {
     // Send both emails
     await transporter.sendMail(adminMailOptions);
     await transporter.sendMail(volunteerMailOptions);
+
+    // Track analytics event
+    await track('Volunteer Application Submitted', {
+      timeCommitment: timeCommitment,
+      educationLevel: educationLevel || 'Not specified',
+    });
 
     res.json({
       success: true,
@@ -387,6 +404,11 @@ TONE: Warm, genuine, helpful. Like a knowledgeable friend — not robotic or for
     );
 
     const aiMessage = response.data.choices[0].message.content;
+
+    // Track analytics event
+    await track('Chatbot Message Sent', {
+      messageLength: message.length,
+    });
 
     res.json({
       success: true,
