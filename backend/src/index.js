@@ -318,18 +318,17 @@ Programs:
 • **Volunteering** — Flexible opportunities: event help, outreach, social media, mentoring
 • **Education** — Empowerment workshops for women & children
 
-Upcoming/Recent Events:
-• **Bollywood Fusion Dandiya** — The most awaited Dandiya night in New Jersey
-• **Bollywood Garba Night** — Beats, tradition & dance
-• **Galentine's Ki Filmy Shaam** — Bollywood, sisterhood & dance celebration
-• Event tickets: **$60** (reduced from $80)
-• See all events: https://samayaglobal.org/events/
+Recent Events:
+* **Bollywood Fusion Dandiya** - The most awaited Dandiya night in New Jersey
+* **Bollywood Garba Night** - Beats, tradition & dance
+* **Galentine's Ki Filmy Shaam** - Bollywood, sisterhood & dance celebration
+* **IMPORTANT TICKET STATUS:** There are currently NO active upcoming events and NO tickets are currently for sale. If a user asks about tickets or upcoming events, kindly inform them that we are busy planning our next amazing experience and they should check back soon!
+* See past events: https://samayaglobal.org/events/
 
 Get Involved:
-• **Donate:** https://samayaglobal.org/donate/ — accepts credit card (Autobooks), Venmo, and Zelle
-• **Volunteer:** https://samayaglobal.org/volunteer/ — fill out the form or email us
-• **Partner:** https://samayaglobal.org/partnership/ — business/vendor partnership inquiries
-• **Buy Tickets:** https://samayaglobal.org/tickets/
+* **Donate:** https://samayaglobal.org/donate/ - accepts credit card (Autobooks), Venmo, and Zelle
+* **Volunteer:** https://samayaglobal.org/volunteer/ - fill out the form or email us
+* **Partner:** https://samayaglobal.org/partnership/ - business/vendor partnership inquiries
 
 Contact:
 • 📧 samayacommunityevents@gmail.com
