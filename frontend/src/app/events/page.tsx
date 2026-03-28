@@ -27,12 +27,13 @@ const eventPhotos = [
   '/images/eventphotos/dandiya_2024_3.jpg',
 ];
 
-const upcomingEvents = [
+const upcomingEvents: any[] = [];
+
+const previousEvents = [
   {
     title: "Galentines Ki Filmy Shaam – Where Bollywood, Sisterhood & Dance Take Over",
-    date: "Friday, February 27 | 7:00 PM",
+    date: "Feb 27, 2025",
     location: "Royal Albert Palace, Woodbridge, NJ",
-    price: "$60",
     image: "/images/events/Galentines Ki Filmy Shaam – Where Bollywood, Sisterhood & Dance Take Over 💃✨.jpg",
     highlights: [
       "Special Live Performance – Jayshree Srikanth, Founder & Artistic Director",
@@ -41,11 +42,7 @@ const upcomingEvents = [
       "Surprise Performance – Stunning finale",
       "Women's Day Celebration",
     ],
-    description: "A glamorous evening as Samaya presents Galentines Ki Filmy Shaam—a Bollywood-inspired celebration of friendship, empowerment, music, and dance.",
   },
-];
-
-const previousEvents = [
   {
     title: "Bollywood Garba Night – Where Beats, Tradition & Dance Take Over",
     date: "Sep 19, 2025",
@@ -204,58 +201,20 @@ export default function Events() {
             {/* Upcoming Events */}
             <section className="mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
               <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-emerald-300 to-teal-400 text-transparent bg-clip-text">Upcoming Events</h2>
-              {upcomingEvents.map((event, idx) => (
-                <div key={idx} className="bg-gradient-to-br from-slate-800/50 via-slate-900/40 to-black/50 backdrop-blur-xl rounded-2xl border border-emerald-500/30 mb-8 hover:border-emerald-400/60 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/20 hover:scale-[1.01] group overflow-hidden">
-                  <div className="grid md:grid-cols-2 gap-8 p-8">
-                    {/* Image Section */}
-                    {event.image && (
-                      <div className="relative w-full min-h-96 rounded-xl overflow-hidden shadow-xl flex items-center justify-center cursor-pointer" onClick={() => setSelectedImage(event.image)}>
-                        <Image
-                          src={event.image}
-                          alt={event.title}
-                          width={500}
-                          height={500}
-                          className="w-full h-auto object-contain group-hover:scale-110 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-                        <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-all duration-300 flex items-center justify-center pointer-events-none group-hover:pointer-events-auto">
-                          <span className="text-white text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Click to expand</span>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* Content Section */}
-                    <div className="flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-emerald-300 to-teal-400 text-transparent bg-clip-text group-hover:from-emerald-200 group-hover:to-cyan-400 transition-all duration-300">{event.title}</h3>
-                        <div className="mb-6 space-y-2 text-slate-300">
-                          <p><strong>📅 Date:</strong> {event.date}</p>
-                          <p><strong>📍 Location:</strong> {event.location}</p>
-                          <p><strong>🎟 Price:</strong> {event.price}</p>
-                        </div>
-                        <p className="text-lg text-slate-300 mb-6">{event.description}</p>
-                        <div className="mb-6">
-                          <h4 className="font-bold mb-3">✨ What's in Store?</h4>
-                          <ul className="space-y-2 text-slate-300">
-                            {event.highlights.map((highlight, i) => (
-                              <li key={i} className="flex items-start">
-                                <span className="mr-3">•</span>
-                                <span>{highlight}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      <Link
-                        href="/tickets"
-                        className="inline-block px-8 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/60 transform active:scale-95 w-fit"
-                      >
-                        Get Tickets
-                      </Link>
-                    </div>
+              
+              {upcomingEvents.length === 0 ? (
+                <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl p-12 rounded-2xl border border-slate-700/50 text-center shadow-lg">
+                  <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">✨</span>
                   </div>
+                  <h3 className="text-2xl font-bold mb-3 text-slate-200">New Events Coming Soon!</h3>
+                  <p className="text-slate-400 max-w-md mx-auto">We are currently curating our next amazing experience. Check back soon for updates or follow our social media to be the first to know!</p>
                 </div>
-              ))}
+              ) : (
+                upcomingEvents.map((event, idx) => (
+                  <div key={idx}></div> 
+                ))
+              )}
             </section>
 
             {/* Event Photo Carousel */}
@@ -300,7 +259,7 @@ export default function Events() {
                     key={index}
                     onClick={() => {
                       if (carouselRef.current) {
-                        const scrollLeft = index * (384 + 24); // 384px width + 24px gap
+                        const scrollLeft = index * (384 + 24);
                         carouselRef.current.scrollLeft = scrollLeft;
                         setCarouselIndex(index);
                       }
