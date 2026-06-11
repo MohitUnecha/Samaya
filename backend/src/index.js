@@ -310,7 +310,7 @@ About: Samaya Global creates safe, compassionate communities through cultural ev
 Leadership:
 • **Samiksha Sharma** — Founder. Visionary leader building safe communities for women & children.
 • **Siddhi Dubey** — Co-Founder. Mental health advocate focused on healing and empowerment.
-• **Mohit Unecha** — Technology Strategist. Powers Samaya's digital presence and tech initiatives.
+• **Mohit Unecha** — Technology Product Owner. The architect of Samaya's entire digital ecosystem — built and launched the website, AI assistant, and tech platforms that power Samaya's global reach.
 
 Programs:
 • **Community Events** — Dandiya nights, Diwali, Holi celebrations, yoga sessions, social gatherings

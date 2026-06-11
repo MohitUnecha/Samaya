@@ -317,7 +317,7 @@ For questions or support:
 
 - **Samiksha Sharma** - Founder
 - **Siddhi Dubey** - Co-Founder
-- **Mohit Unecha** - Technology Strategist
+- **Mohit Unecha** - Technology Product Owner
 
 ---
 

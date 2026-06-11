@@ -29,9 +29,9 @@ const teamMembers = [
   },
   {
     name: 'Mohit Unecha',
-    role: 'Technology Strategist',
-    description: 'Leading technology initiatives to amplify our mission of supporting women and children through education, care, and community empowerment.',
-    image: '/images/team/MohitUnechaTechnology Strategist.jpg',
+    role: 'Technology Product Owner',
+    description: 'The architect of Samaya\'s entire digital ecosystem — envisioning, building, and launching the technology that powers our mission. From the website to AI-driven experiences, Mohit transforms bold ideas into platforms that amplify our reach and empower women and children around the world.',
+    image: '/images/team/MohitUnechaTechnologyProductOwner.jpg',
   },
 ];
 
@@ -139,7 +139,7 @@ export default function Team() {
                 ))}
               </div>
 
-              {/* Technology Strategist - Centered Below */}
+              {/* Technology Product Owner - Centered Below */}
               <div className="w-full max-w-2xl">
                 {teamMembers.slice(2).map((member, idx) => (
                   <div key={idx} className="bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl p-10 rounded-3xl border border-teal-500/30 hover:border-emerald-400/60 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/20 hover:scale-[1.02] group">

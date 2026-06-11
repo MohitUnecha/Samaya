@@ -7,7 +7,7 @@
 - **Kept**: 
   - Samiksha Sharma (Founder)
   - Siddhi Dubey (Co-Founder)
-  - Mohit Unecha (Technology Strategist)
+  - Mohit Unecha (Technology Product Owner)
 
 The team page now displays 3 members in a grid layout with their roles and descriptions.
 
